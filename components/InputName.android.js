@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StyleSheet, TextInput } from 'react-native';
 
 const styles = StyleSheet.create({
   inputname: {
-    height: 30,
+    height: 60,
     width: '95%',
     borderColor: 'black',
     backgroundColor: '#FFFFFF',
@@ -18,8 +19,12 @@ class InputName extends React.Component {
     return (
       <TextInput
         style={styles.inputname}
+        onChangeText={(text) => { this.props.value(text); }}
       />
     );
   }
 }
+InputName.propTypes = {
+  value: PropTypes.func.isRequired,
+};
 export default InputName;

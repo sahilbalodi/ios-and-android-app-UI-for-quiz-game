@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, Button, Alert, View } from 'react-native';
+import PropTypes from 'prop-types';
+
+import { StyleSheet, Button, View } from 'react-native';
 
 const styles = StyleSheet.create({
   buttonComponent: {
@@ -27,11 +29,15 @@ class DisplayButton extends React.Component {
         <Button
           style={styles.buttonComponent}
           color="black"
-          onPress={() => { Alert.alert('saved'); }}
-          title="LOGIN"
+          onPress={() => { this.props.login(); }}
+          title={this.props.value}
         />
       </View>
     );
   }
 }
+DisplayButton.propTypes = {
+  value: PropTypes.string.isRequired,
+  login: PropTypes.func.isRequired,
+};
 export default DisplayButton;
