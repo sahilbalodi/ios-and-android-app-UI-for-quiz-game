@@ -10,7 +10,6 @@ import {
   View,
   Text,
 } from 'react-native';
-import Header from './Header';
 
 import DisplayButton from './Button';
 import InputName from './InputName';
@@ -39,7 +38,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'left',
     fontSize: 20,
-    color: 'black',
     position: 'relative',
     backgroundColor: 'white',
     top: 45,
@@ -50,7 +48,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'left',
     fontSize: 20,
-    color: 'black',
     position: 'relative',
     backgroundColor: 'white',
     top: 15,
@@ -70,9 +67,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     fontSize: 40,
-    color: 'white',
     position: 'relative',
     backgroundColor: '#00BCF4',
+    color: 'white',
     top: 15,
     margin: 5,
   },
