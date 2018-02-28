@@ -5,18 +5,18 @@
  */
 import React, { Component } from 'react';
 import axios from 'axios';
+
 import {
   View,
   Text,
-  ScrollView,
   Alert,
 } from 'react-native';
 import RadioButton from 'radio-button-react-native';
-import styles from './styles.ios';
+import styles from './components/Styles/styles.android';
 
-import DisplayButton from './Button.ios';
-import InputName from './InputName.ios';
-import CalculateButton from './CalculateButton.ios';
+import DisplayButton from './components/Button/Button.android';
+import InputName from './components/InputName/InputName.android';
+import CalculateButton from './components/CalculateButton/CalculateButton.android';
 
 
 export default class App extends Component {
@@ -99,66 +99,64 @@ export default class App extends Component {
       );
     } else if (this.state.page === 1) {
       return (
-        <ScrollView>
-          <View>
-            <Text style={styles.Hello}>
-              {'Hello '}{this.state.name}
+        <View>
+          <Text style={styles.Hello}>
+            {'Hello '}{this.state.name}
+          </Text>
+          <View style={styles.cardCollection}>
+            <Text style={{ fontWeight: 'bold' }}>
+              {'Question\n'}
             </Text>
-            <View style={styles.cardCollection}>
-              <Text style={{ fontWeight: 'bold' }}>
-                {'Question\n'}
-              </Text>
-              <View style={styles.question}>
-                <Text>sahil</Text>
-              </View >
-              <View style={{
+            <View style={styles.question}>
+              <Text>sahil</Text>
+            </View >
+            <View style={{
 position: 'relative',
         left: 20,
 }}
-              >
-                <RadioButton currentValue={0} value={1} onPress={() => Alert.alert('option1')}>
-                  <Text>option1</Text>
-                </RadioButton><Text />
-                <RadioButton currentValue={0} value={2} onPress={() => Alert.alert('option2')}>
-                  <Text>option2</Text>
-                </RadioButton><Text />
-                <RadioButton currentValue={0} value={3} onPress={() => Alert.alert('option3')}>
-                  <Text>option3</Text>
-                </RadioButton><Text />
-                <RadioButton currentValue={0} value={4} onPress={() => Alert.alert('option4')}>
-                  <Text>option4</Text>
-                </RadioButton><Text />
-              </View>
+            >
+              <RadioButton currentValue={0} value={1} onPress={() => Alert.alert('option1')}>
+                <Text>option1</Text>
+              </RadioButton><Text />
+              <RadioButton currentValue={0} value={2} onPress={() => Alert.alert('option2')}>
+                <Text>option2</Text>
+              </RadioButton><Text />
+              <RadioButton currentValue={0} value={3} onPress={() => Alert.alert('option3')}>
+                <Text>option3</Text>
+              </RadioButton><Text />
+              <RadioButton currentValue={0} value={4} onPress={() => Alert.alert('option4')}>
+                <Text>option4</Text>
+              </RadioButton><Text />
             </View>
-            <View style={styles.cardCollection}>
-              <Text style={{ fontWeight: 'bold' }}>
-                {'Question\n'}
-              </Text>
-              <View style={styles.question}>
-                <Text>sahil</Text>
-              </View >
-              <View style={{
-position: 'relative',
-        left: 20,
-}}
-              >
-                <RadioButton currentValue={0} value={1} onPress={() => Alert.alert('option1')}>
-                  <Text>option1</Text>
-                </RadioButton><Text />
-                <RadioButton currentValue={0} value={2} onPress={() => Alert.alert('option2')}>
-                  <Text>option2</Text>
-                </RadioButton><Text />
-                <RadioButton currentValue={0} value={3} onPress={() => Alert.alert('option3')}>
-                  <Text>option3</Text>
-                </RadioButton><Text />
-                <RadioButton currentValue={0} value={4} onPress={() => Alert.alert('option4')}>
-                  <Text>option4</Text>
-                </RadioButton><Text />
-              </View>
-            </View>
-            <CalculateButton value="Calculate" onClick={() => this.CalculateSum()} />
           </View>
-        </ScrollView>
+          <View style={styles.cardCollection}>
+            <Text style={{ fontWeight: 'bold' }}>
+              {'Question\n'}
+            </Text>
+            <View style={styles.question}>
+              <Text>sahil</Text>
+            </View >
+            <View style={{
+position: 'relative',
+        left: 20,
+}}
+            >
+              <RadioButton currentValue={0} value={1} onPress={() => Alert.alert('option1')}>
+                <Text>option1</Text>
+              </RadioButton><Text />
+              <RadioButton currentValue={0} value={2} onPress={() => Alert.alert('option2')}>
+                <Text>option2</Text>
+              </RadioButton><Text />
+              <RadioButton currentValue={0} value={3} onPress={() => Alert.alert('option3')}>
+                <Text>option3</Text>
+              </RadioButton><Text />
+              <RadioButton currentValue={0} value={4} onPress={() => Alert.alert('option4')}>
+                <Text>option4</Text>
+              </RadioButton><Text />
+            </View>
+          </View>
+          <CalculateButton value="Calculate" onClick={() => this.CalculateSum()} />
+        </View>
       );
     }
 
